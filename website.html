@@ -1,0 +1,2686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Bajaj | Security Operations Team Lead</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional portfolio and resume of Manish Bajaj, Security Operations Team Lead. Specialized in Azure Sentinel, Threat Intelligence, Vulnerability Management, and SOC operations.">
+    <meta name="keywords" content="Manish Bajaj, Security Operations, Team Lead, Azure Sentinel, Threat Intelligence, Vulnerability Management, SOC Analyst, KQL, Incident Response, Cybersecurity, Wipro, Wipro Analyst, Atech Cloud">
+    <meta name="author" content="Manish Bajaj">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Manish Bajaj | SecOps Team Lead & Azure Sentinel Expert">
+    <meta property="og:description" content="Explore Manish Bajaj's premium cyber-dashboard resume featuring threat hunting, Microsoft Security stack expertise, and interactive security telemetry.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://linkedin.com/in/manish-bajajb48ab9223">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN SYSTEM & BASE VARIABLES
+           ========================================================================== */
+        :root {
+            --bg-void: #050811;
+            --bg-card: rgba(10, 15, 30, 0.65);
+            --bg-card-hover: rgba(13, 25, 48, 0.8);
+            
+            /* Neon Colors */
+            --color-blue: #00b4d8;
+            --color-cyan: #00f5d4;
+            --color-teal: #0d7377;
+            --color-green: #39ff14;
+            --color-red: #ff0055;
+            --color-text: #e0e6ed;
+            --color-text-dim: #8b9bb4;
+            
+            /* Glow shadows */
+            --glow-blue: 0 0 15px rgba(0, 180, 218, 0.4);
+            --glow-cyan: 0 0 15px rgba(0, 245, 212, 0.4);
+            --glow-teal: 0 0 15px rgba(13, 115, 119, 0.4);
+            --glow-green: 0 0 15px rgba(57, 255, 20, 0.4);
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-cyber: all 0.15s steps(4);
+            
+            --font-cyber: 'Share Tech Mono', monospace;
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* Reset & Base Rules */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: none; /* Hide default cursor to use custom crosshair */
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-void);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: var(--bg-void);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-teal);
+            border-radius: 4px;
+            border: 2px solid var(--bg-void);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-blue);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* ==========================================================================
+           2. GLOBAL CYBER AESTHETIC OVERLAYS
+           ========================================================================== */
+        /* Scanlines Overlay */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            ), 
+            linear-gradient(
+                90deg, 
+                rgba(255, 0, 0, 0.04), 
+                rgba(0, 255, 0, 0.01), 
+                rgba(0, 0, 255, 0.04)
+            );
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        /* Hacker Grid Overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 180, 216, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 180, 216, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Canvas Particle Background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* CRT Glitch/Flicker Overlay (Subtle) */
+        @keyframes crt-flicker {
+            0% { opacity: 0.985; }
+            50% { opacity: 0.995; }
+            100% { opacity: 0.985; }
+        }
+        .crt-monitor {
+            position: relative;
+            animation: crt-flicker 0.15s infinite;
+        }
+
+        /* Custom Crosshair Cursor */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-cyan);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 10000;
+            transition: width 0.1s, height 0.1s, background-color 0.1s;
+        }
+        .custom-cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--color-blue);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.2s, width 0.2s, height 0.2s;
+        }
+        /* Add crosshair indicators to the outer ring */
+        .custom-cursor-ring::before,
+        .custom-cursor-ring::after {
+            content: '';
+            position: absolute;
+            background: var(--color-blue);
+            transition: background-color 0.2s;
+        }
+        .custom-cursor-ring::before {
+            width: 6px;
+            height: 1px;
+            left: -3px;
+            top: 50%;
+        }
+        .custom-cursor-ring::after {
+            width: 1px;
+            height: 6px;
+            left: 50%;
+            top: -3px;
+        }
+
+        /* Cursor interaction overrides */
+        .hovering-interactive .custom-cursor {
+            background-color: var(--color-cyan);
+            width: 4px;
+            height: 4px;
+        }
+        .hovering-interactive .custom-cursor-ring {
+            border-color: var(--color-cyan);
+            width: 48px;
+            height: 48px;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        /* Hide cursor completely on touch screens */
+        @media (hover: none) {
+            * { cursor: auto !important; }
+            .custom-cursor, .custom-cursor-ring { display: none !important; }
+        }
+
+        /* ==========================================================================
+           3. GLASSMORPHISM & UTILITY CLASSES
+           ========================================================================== */
+        .cyber-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            border-radius: 4px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 180, 216, 0.05);
+            transition: var(--transition-smooth);
+        }
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-blue), var(--color-cyan), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .cyber-card:hover {
+            border-color: rgba(0, 245, 212, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 180, 216, 0.15), inset 0 0 25px rgba(0, 245, 212, 0.08);
+            transform: translateY(-2px);
+        }
+        .cyber-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Section Headings with Animated Lines */
+        .section-header {
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-shadow: 0 0 8px rgba(224, 230, 237, 0.1);
+        }
+        .section-header h2 span {
+            color: var(--color-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .section-header .header-code {
+            font-family: var(--font-cyber);
+            font-size: 0.85rem;
+            color: var(--color-blue);
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+            display: block;
+        }
+        .section-header .header-line {
+            width: 100%;
+            height: 2px;
+            background: var(--color-teal);
+            position: relative;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+        .section-header .header-line-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--color-blue), var(--color-cyan));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.2s cubic-bezier(0.66, 0, 0.34, 1);
+        }
+        .section-header.visible .header-line-fill {
+            transform: scaleX(1);
+        }
+
+        /* Standard Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 8rem 0 4rem 0;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           4. NAVIGATION BAR (GLITCH HOVER)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(5, 8, 17, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span {
+            color: var(--color-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .logo-indicator {
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-green);
+            box-shadow: var(--glow-green);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        /* Nav List */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            font-family: var(--font-cyber);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: var(--color-text-dim);
+            text-decoration: none;
+            padding: 0.5rem 0.8rem;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        /* Navigation Glitch Hover Effect */
+        .nav-links a::before,
+        .nav-links a::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-void);
+            padding: 0.5rem 0.8rem;
+            box-sizing: border-box;
+            display: none;
+        }
+        .nav-links a:hover {
+            color: var(--color-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .nav-links a:hover::before {
+            display: block;
+            color: var(--color-blue);
+            animation: glitch-anim 0.3s infinite linear alternate-reverse;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        .nav-links a:hover::after {
+            display: block;
+            color: var(--color-red);
+            animation: glitch-anim2 0.3s infinite linear alternate-reverse;
+            z-index: -2;
+            opacity: 0.8;
+        }
+        .nav-links a.active {
+            color: var(--color-cyan);
+            border-bottom: 2px solid var(--color-cyan);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: 1.5rem;
+            cursor: none;
+        }
+
+        /* Glitch Animation Keyframes */
+        @keyframes glitch-anim {
+            0% { clip-path: inset(40% 0 61% 0); transform: skew(0.3deg); }
+            20% { clip-path: inset(92% 0 1% 0); transform: skew(-0.5deg); }
+            40% { clip-path: inset(25% 0 58% 0); transform: skew(0.8deg); }
+            60% { clip-path: inset(80% 0 5% 0); transform: skew(-0.2deg); }
+            80% { clip-path: inset(11% 0 75% 0); transform: skew(0.5deg); }
+            100% { clip-path: inset(50% 0 30% 0); transform: skew(-0.8deg); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip-path: inset(25% 0 58% 0); transform: skew(-0.8deg); }
+            20% { clip-path: inset(70% 0 10% 0); transform: skew(0.3deg); }
+            40% { clip-path: inset(12% 0 80% 0); transform: skew(-0.5deg); }
+            60% { clip-path: inset(82% 0 3% 0); transform: skew(0.8deg); }
+            80% { clip-path: inset(5% 0 90% 0); transform: skew(-0.2deg); }
+            100% { clip-path: inset(62% 0 22% 0); transform: skew(0.5deg); }
+        }
+
+        /* ==========================================================================
+           5. HERO SECTION
+           ========================================================================== */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        .hero-cmd {
+            font-family: var(--font-cyber);
+            color: var(--color-blue);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+        }
+        .hero-name-container {
+            min-height: 80px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-name {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            color: var(--color-text);
+            text-transform: uppercase;
+            line-height: 1;
+            position: relative;
+        }
+        .hero-name span {
+            color: var(--color-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .typewriter-cursor {
+            display: inline-block;
+            width: 12px;
+            height: 4rem;
+            background-color: var(--color-cyan);
+            margin-left: 10px;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+            box-shadow: var(--glow-cyan);
+        }
+
+        .hero-subtitle-container {
+            min-height: 50px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-subtitle {
+            font-family: var(--font-cyber);
+            font-size: 1.15rem;
+            color: var(--color-text-dim);
+            letter-spacing: 1px;
+            max-width: 750px;
+            margin: 0 auto;
+            opacity: 0; /* JS will fade and scramble this in */
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hero Certifications Banner */
+        .hero-certs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+        }
+        .hero-certs.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mini-badge {
+            font-family: var(--font-cyber);
+            font-size: 0.75rem;
+            background: rgba(13, 115, 119, 0.1);
+            color: var(--color-cyan);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            border-radius: 3px;
+            padding: 0.35rem 0.8rem;
+            letter-spacing: 1.5px;
+            box-shadow: inset 0 0 5px rgba(0, 245, 212, 0.05);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .mini-badge i {
+            font-size: 0.7rem;
+            color: var(--color-blue);
+        }
+        .mini-badge:hover {
+            border-color: var(--color-cyan);
+            background: rgba(0, 245, 212, 0.15);
+            box-shadow: var(--glow-cyan);
+            transform: translateY(-2px);
+        }
+
+        /* Cyber Glowing Button */
+        .btn-cyber {
+            font-family: var(--font-cyber);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--color-cyan);
+            border: 1px solid var(--color-cyan);
+            padding: 0.85rem 2.2rem;
+            position: relative;
+            background: transparent;
+            box-shadow: inset 0 0 8px rgba(0, 245, 212, 0.2);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 1.1s, transform 0.8s ease 1.1s, var(--transition-smooth);
+        }
+        .btn-cyber.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-cyber:hover::before {
+            left: 100%;
+        }
+        .btn-cyber:hover {
+            color: var(--bg-void);
+            background-color: var(--color-cyan);
+            box-shadow: 0 0 25px rgba(0, 245, 212, 0.6);
+            text-shadow: none;
+            font-weight: bold;
+        }
+        
+        /* Corner brackets details */
+        .btn-cyber::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-bottom: 2px solid var(--color-cyan);
+            border-right: 2px solid var(--color-cyan);
+            bottom: 2px;
+            right: 2px;
+        }
+        
+        /* Bottom Scroll indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.6;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+        .scroll-down:hover {
+            opacity: 1;
+        }
+        .scroll-down span {
+            font-family: var(--font-cyber);
+            font-size: 0.7rem;
+            color: var(--color-text-dim);
+            letter-spacing: 2px;
+        }
+        .scroll-down i {
+            color: var(--color-blue);
+            animation: bounce 2s infinite;
+        }
+
+        /* Animations */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 5px rgba(57, 255, 20, 0.4); }
+            100% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 15px rgba(57, 255, 20, 0.8); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        /* ==========================================================================
+           6. ABOUT / SUMMARY SECTION
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .about-terminal {
+            background: rgba(5, 8, 17, 0.8);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 4px;
+            font-family: var(--font-cyber);
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            box-shadow: inset 0 0 15px rgba(0, 180, 216, 0.05);
+        }
+        .terminal-row {
+            display: flex;
+            margin-bottom: 0.5rem;
+        }
+        .terminal-label {
+            color: var(--color-blue);
+            width: 140px;
+            flex-shrink: 0;
+        }
+        .terminal-val {
+            color: var(--color-text);
+        }
+        .terminal-val.status-active {
+            color: var(--color-green);
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+        }
+
+        /* SVG Shield Design */
+        .shield-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .svg-shield {
+            width: 280px;
+            height: 280px;
+            filter: drop-shadow(0px 0px 20px rgba(0, 245, 212, 0.35));
+        }
+        .shield-bg {
+            fill: rgba(10, 15, 30, 0.3);
+            stroke: var(--color-teal);
+            stroke-width: 2px;
+        }
+        .shield-glow {
+            stroke: var(--color-cyan);
+            stroke-width: 3px;
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: draw-shield 5s linear infinite;
+        }
+        .shield-ring {
+            fill: none;
+            stroke: var(--color-blue);
+            stroke-width: 1.5px;
+            stroke-dasharray: 10, 15;
+            transform-origin: center;
+            animation: rotate-ring 20s linear infinite;
+        }
+        .shield-ring-reverse {
+            fill: none;
+            stroke: var(--color-cyan);
+            stroke-width: 1px;
+            stroke-dasharray: 20, 10;
+            transform-origin: center;
+            animation: rotate-ring-rev 15s linear infinite;
+        }
+        .shield-icon {
+            fill: var(--color-cyan);
+            filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.6));
+            transform-origin: center;
+            animation: shield-pulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes draw-shield {
+            0% { stroke-dashoffset: 600; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -600; }
+        }
+        @keyframes rotate-ring {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes rotate-ring-rev {
+            100% { transform: rotate(-360deg); }
+        }
+        @keyframes shield-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 15px rgba(0, 245, 212, 0.8)); }
+        }
+
+        /* ==========================================================================
+           7. CORE COMPETENCIES (NEON LABELS)
+           ========================================================================== */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        .comp-card {
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            transition: var(--transition-smooth);
+        }
+        .comp-card:hover {
+            border-color: rgba(0, 180, 216, 0.4);
+        }
+        .comp-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--color-cyan);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+            padding-bottom: 0.8rem;
+        }
+        .comp-title i {
+            color: var(--color-blue);
+            font-size: 1.2rem;
+        }
+        .comp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+        .comp-tag {
+            font-family: var(--font-cyber);
+            font-size: 0.8rem;
+            background: rgba(5, 8, 17, 0.6);
+            color: var(--color-text);
+            border: 1px solid rgba(139, 155, 180, 0.25);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+        /* Custom Hover colors per card category */
+        .comp-card:nth-child(1) .comp-tag:hover {
+            border-color: var(--color-cyan);
+            color: var(--color-cyan);
+            box-shadow: var(--glow-cyan);
+            background: rgba(0, 245, 212, 0.05);
+            transform: translateY(-2px);
+        }
+        .comp-card:nth-child(2) .comp-tag:hover {
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+            box-shadow: var(--glow-blue);
+            background: rgba(0, 180, 216, 0.05);
+            transform: translateY(-2px);
+        }
+        .comp-card:nth-child(3) .comp-tag:hover {
+            border-color: var(--color-green);
+            color: var(--color-green);
+            box-shadow: var(--glow-green);
+            background: rgba(57, 255, 20, 0.05);
+            transform: translateY(-2px);
+        }
+        .comp-card:nth-child(4) .comp-tag:hover {
+            border-color: var(--color-cyan);
+            color: var(--color-cyan);
+            box-shadow: var(--glow-cyan);
+            background: rgba(0, 245, 212, 0.05);
+            transform: translateY(-2px);
+        }
+        .comp-card:nth-child(5) .comp-tag:hover {
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+            box-shadow: var(--glow-blue);
+            background: rgba(0, 180, 216, 0.05);
+            transform: translateY(-2px);
+        }
+        .comp-card:nth-child(6) .comp-tag:hover {
+            border-color: var(--color-teal);
+            color: var(--color-cyan);
+            box-shadow: var(--glow-teal);
+            background: rgba(13, 115, 119, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           8. EXPERIENCE TIMELINE (VERTICAL CYBER-RAIL)
+           ========================================================================== */
+        .timeline-wrapper {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        /* Vertical central track */
+        .timeline-rail {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(13, 115, 119, 0.25);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .timeline-rail-progress {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-blue), var(--color-cyan));
+            box-shadow: var(--glow-cyan);
+            transform: translateX(-50%);
+            z-index: 2;
+            transition: bottom 0.1s ease;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 3;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-card-wrapper {
+            width: 44%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+        }
+        .timeline-item:nth-child(odd) .timeline-card-wrapper {
+            transform: translateX(-50px) translateY(20px);
+        }
+        .timeline-item:nth-child(even) .timeline-card-wrapper {
+            transform: translateX(50px) translateY(20px);
+            margin-left: auto;
+        }
+
+        /* Visible scroll class trigger */
+        .timeline-item.in-view .timeline-card-wrapper {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        /* Central laser node */
+        .timeline-node {
+            width: 16px;
+            height: 16px;
+            background: var(--bg-void);
+            border: 2px solid var(--color-teal);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            transform: translate(-50%, 0);
+            z-index: 5;
+            transition: var(--transition-smooth);
+        }
+        .timeline-item.in-view .timeline-node {
+            border-color: var(--color-cyan);
+            background: var(--color-cyan);
+            box-shadow: var(--glow-cyan), 0 0 0 6px rgba(0, 245, 212, 0.2);
+        }
+
+        /* Details inside timeline card */
+        .timeline-date {
+            font-family: var(--font-cyber);
+            font-size: 0.9rem;
+            color: var(--color-cyan);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            display: block;
+        }
+        .timeline-role {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.5px;
+        }
+        .timeline-company {
+            font-family: var(--font-cyber);
+            font-size: 1rem;
+            color: var(--color-blue);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            border-bottom: 1px dashed rgba(0, 180, 216, 0.3);
+            padding-bottom: 0.2rem;
+        }
+        .timeline-bullets {
+            list-style: none;
+        }
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--color-text-dim);
+            line-height: 1.5;
+        }
+        .timeline-bullets li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-cyan);
+            font-family: var(--font-cyber);
+            font-weight: bold;
+        }
+
+        /* Responsive timeline */
+        @media(max-width: 768px) {
+            .timeline-rail {
+                left: 20px;
+            }
+            .timeline-rail-progress {
+                left: 20px;
+            }
+            .timeline-node {
+                left: 20px;
+                transform: translate(-50%, 0);
+            }
+            .timeline-card-wrapper {
+                width: calc(100% - 45px);
+                margin-left: auto !important;
+            }
+            .timeline-item:nth-child(odd) .timeline-card-wrapper {
+                transform: translateX(30px) translateY(20px);
+            }
+            .timeline-item:nth-child(even) .timeline-card-wrapper {
+                transform: translateX(30px) translateY(20px);
+            }
+            .timeline-item.in-view .timeline-card-wrapper {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        /* ==========================================================================
+           9. CERTIFICATIONS GRID (3D FLIP CARDS)
+           ========================================================================== */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .cert-card-container {
+            perspective: 1000px;
+            height: 250px;
+        }
+        .cert-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 4px;
+        }
+        
+        /* 3D Flip Trigger */
+        .cert-card-container:hover .cert-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        /* Card Sides */
+        .cert-card-front, .cert-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 4px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(8px);
+        }
+        .cert-card-front {
+            z-index: 2;
+        }
+        .cert-card-back {
+            transform: rotateY(180deg);
+            background: rgba(5, 25, 48, 0.9);
+            border-color: var(--color-cyan);
+            box-shadow: inset 0 0 20px rgba(0, 245, 212, 0.1);
+        }
+
+        /* Pulse Animation on Cert Front */
+        .cert-card-container:hover .cert-card-front {
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+        .cert-icon-glow {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 180, 216, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            color: var(--color-cyan);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.1);
+            animation: pulse-ring 3s infinite alternate;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 8px rgba(0, 245, 212, 0.2); border-color: rgba(0, 245, 212, 0.2); }
+            100% { box-shadow: 0 0 16px rgba(0, 180, 216, 0.4); border-color: rgba(0, 180, 216, 0.4); }
+        }
+
+        .cert-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+        .cert-code {
+            font-family: var(--font-cyber);
+            font-size: 0.8rem;
+            color: var(--color-blue);
+            letter-spacing: 1px;
+        }
+
+        /* Back Details */
+        .cert-issuer {
+            font-family: var(--font-cyber);
+            font-size: 0.9rem;
+            color: var(--color-cyan);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .cert-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-dim);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        .cert-btn {
+            font-family: var(--font-cyber);
+            font-size: 0.75rem;
+            color: var(--color-cyan);
+            border: 1px solid var(--color-cyan);
+            background: transparent;
+            padding: 0.3rem 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .cert-btn:hover {
+            background: var(--color-cyan);
+            color: var(--bg-void);
+            box-shadow: var(--glow-cyan);
+        }
+
+        /* AZ-104 New Ribbon Styling */
+        .ribbon-wrapper {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 75px;
+            height: 75px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .ribbon-new {
+            font-family: var(--font-cyber);
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: var(--bg-void);
+            text-transform: uppercase;
+            text-align: center;
+            background-color: var(--color-cyan);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+            transform: rotate(45deg);
+            position: relative;
+            padding: 4px 0;
+            left: -5px;
+            top: 15px;
+            width: 100px;
+            display: block;
+        }
+
+        /* ==========================================================================
+           10. CERTIFICATION ROADMAP (TACTICAL PROGRESSION BAR)
+           ========================================================================== */
+        .roadmap-card {
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            padding: 3rem 2rem;
+            background: rgba(10, 15, 30, 0.5);
+        }
+        .roadmap-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        /* Connection laser path */
+        .roadmap-track {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 3px;
+            background: rgba(13, 115, 119, 0.2);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .roadmap-track-fill {
+            position: absolute;
+            left: 0;
+            width: 50%; /* Reaches the active in-progress node */
+            top: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-green), var(--color-blue));
+            box-shadow: var(--glow-blue);
+            z-index: 2;
+            transition: width 1s ease;
+        }
+
+        .roadmap-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            width: 140px;
+        }
+        .roadmap-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-void);
+            border: 2px solid rgba(139, 155, 180, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--color-text-dim);
+            transition: var(--transition-smooth);
+            margin-bottom: 0.8rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .roadmap-label {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--color-text-dim);
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+        .roadmap-status {
+            font-family: var(--font-cyber);
+            font-size: 0.75rem;
+            color: var(--color-text-dim);
+            margin-top: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        /* Completed State */
+        .roadmap-node.completed .roadmap-dot {
+            border-color: var(--color-green);
+            background: var(--color-green);
+            color: var(--bg-void);
+            box-shadow: var(--glow-green);
+        }
+        .roadmap-node.completed .roadmap-label {
+            color: var(--color-text);
+        }
+        .roadmap-node.completed .roadmap-status {
+            color: var(--color-green);
+        }
+
+        /* In Progress State */
+        .roadmap-node.in-progress .roadmap-dot {
+            border-color: var(--color-blue);
+            background: var(--bg-void);
+            color: var(--color-blue);
+            box-shadow: var(--glow-blue);
+            animation: pulse-border 1.5s infinite alternate;
+        }
+        .roadmap-node.in-progress .roadmap-label {
+            color: var(--color-blue);
+            text-shadow: var(--glow-blue);
+        }
+        .roadmap-node.in-progress .roadmap-status {
+            color: var(--color-blue);
+        }
+
+        /* Planned/Locked State */
+        .roadmap-node.locked .roadmap-dot i {
+            font-size: 0.8rem;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(0, 180, 216, 0.4); box-shadow: 0 0 5px rgba(0, 180, 216, 0.2); }
+            100% { border-color: rgba(0, 180, 216, 1); box-shadow: var(--glow-blue); }
+        }
+
+        /* Responsive roadmap */
+        @media (max-width: 600px) {
+            .roadmap-bar {
+                flex-direction: column;
+                gap: 2.5rem;
+                height: 450px;
+                width: 100px;
+                padding: 0;
+            }
+            .roadmap-track {
+                width: 3px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+            .roadmap-track-fill {
+                width: 100%;
+                height: 25%;
+                background: linear-gradient(180deg, var(--color-green), var(--color-blue));
+            }
+            .roadmap-node {
+                flex-direction: row;
+                width: 250px;
+                justify-content: flex-start;
+                gap: 1.5rem;
+            }
+            .roadmap-dot {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .roadmap-node {
+                text-align: left;
+            }
+        }
+
+        /* ==========================================================================
+           11. STATS SECTION (TELEMETRY COUNTERS)
+           ========================================================================== */
+        #stats {
+            background: rgba(5, 8, 17, 0.95);
+            border-top: 1px solid rgba(0, 180, 216, 0.1);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+            position: relative;
+            padding: 5rem 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .stat-item {
+            padding: 1rem;
+        }
+        .stat-number {
+            font-family: var(--font-cyber);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-cyan);
+            text-shadow: var(--glow-cyan);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--color-text-dim);
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           12. CONTACT SECTION & INTERACTIVE TERMINAL
+           ========================================================================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: stretch;
+        }
+        .contact-info-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .contact-desc {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--color-text-dim);
+            margin-bottom: 2rem;
+        }
+        
+        /* Contact item list */
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: var(--color-text-dim);
+            transition: var(--transition-smooth);
+            padding: 0.5rem 0;
+        }
+        .contact-item:hover {
+            color: var(--color-cyan);
+            transform: translateX(5px);
+        }
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            background: rgba(13, 115, 119, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--color-cyan);
+            transition: var(--transition-smooth);
+        }
+        .contact-item:hover .contact-icon {
+            border-color: var(--color-cyan);
+            background: rgba(0, 245, 212, 0.15);
+            box-shadow: var(--glow-cyan);
+        }
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-label {
+            font-family: var(--font-cyber);
+            font-size: 0.75rem;
+            color: var(--color-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .contact-value {
+            font-family: var(--font-cyber);
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        /* Cyber/Hacker Interactive Terminal */
+        .contact-terminal-container {
+            border: 1px solid rgba(0, 180, 216, 0.25);
+            border-radius: 4px;
+            background: rgba(5, 8, 17, 0.9);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            overflow: hidden;
+            font-family: var(--font-cyber);
+        }
+        .terminal-header {
+            background: rgba(10, 15, 30, 0.9);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background-color: var(--color-red); }
+        .dot-yellow { background-color: #ffb703; }
+        .dot-green { background-color: var(--color-green); }
+        .terminal-title {
+            font-size: 0.8rem;
+            color: var(--color-text-dim);
+            letter-spacing: 1px;
+        }
+        .terminal-body {
+            padding: 1.2rem;
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            scroll-behavior: smooth;
+        }
+        .terminal-body::-webkit-scrollbar {
+            width: 4px;
+        }
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: var(--color-teal);
+        }
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .terminal-prompt {
+            color: var(--color-cyan);
+            white-space: nowrap;
+        }
+        .terminal-input {
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--color-text);
+            font-family: var(--font-cyber);
+            font-size: 0.9rem;
+            flex-grow: 1;
+            caret-color: var(--color-cyan);
+        }
+
+        /* ==========================================================================
+           13. FOOTER
+           ========================================================================== */
+        footer {
+            border-top: 1px solid rgba(0, 180, 216, 0.1);
+            background: #03060c;
+            padding: 2.5rem 0;
+            text-align: center;
+            font-family: var(--font-cyber);
+            font-size: 0.8rem;
+            color: var(--color-text-dim);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 10;
+        }
+        footer span {
+            color: var(--color-cyan);
+        }
+        
+        /* ==========================================================================
+           14. GLOBAL TRANSITION & VIEWPORT ANIMATIONS (Intersection Observer)
+           ========================================================================== */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Delay Utilities */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Mobile Adjustments */
+        @media(max-width: 992px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .shield-container {
+                order: -1; /* Shield goes on top of summary on tablet/mobile */
+            }
+            .svg-shield {
+                width: 200px;
+                height: 200px;
+            }
+            .hero-name {
+                font-size: 3rem;
+                letter-spacing: 4px;
+            }
+            .typewriter-cursor {
+                height: 2.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(5, 8, 17, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition-smooth);
+                border-top: 1px solid rgba(0, 180, 216, 0.1);
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+            .hero-name {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            .typewriter-cursor {
+                height: 2.2rem;
+                width: 8px;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            section {
+                padding: 6rem 0 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="crt-monitor">
+
+    <!-- Global Visual Overlays -->
+    <div class="scanlines"></div>
+    <div class="grid-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Mouse Cursor Elements -->
+    <div class="custom-cursor" id="cursor-dot"></div>
+    <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+    <!-- NAVIGATION HEADER -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-indicator"></span>
+                M.BAJAJ <span>// SEC-OPS</span>
+            </a>
+            
+            <button class="menu-toggle" id="menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#about" data-text="ABOUT" class="nav-link">ABOUT</a></li>
+                <li><a href="#competencies" data-text="COMPETENCIES" class="nav-link">COMPETENCIES</a></li>
+                <li><a href="#experience" data-text="EXPERIENCE" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#certifications" data-text="CERTIFICATIONS" class="nav-link">CERTIFICATIONS</a></li>
+                <li><a href="#roadmap" data-text="ROADMAP" class="nav-link">ROADMAP</a></li>
+                <li><a href="#contact" data-text="CONTACT" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-cmd">[sys.analyst@command-center]:~$ locate manish-bajaj</div>
+            <div class="hero-name-container">
+                <h1 class="hero-name" id="typewriter-target"></h1>
+                <span class="typewriter-cursor"></span>
+            </div>
+            
+            <div class="hero-subtitle-container">
+                <p class="hero-subtitle" id="scramble-target" data-final="Security Operations Team Lead | Azure Sentinel | Threat Intelligence | Vulnerability Management">
+                    Security Operations Team Lead | Azure Sentinel | Threat Intelligence | Vulnerability Management
+                </p>
+            </div>
+
+            <!-- Inlined Core Badges -->
+            <div class="hero-certs" id="hero-badges">
+                <span class="mini-badge"><i class="fa-solid fa-shield"></i> SC-200</span>
+                <span class="mini-badge"><i class="fa-solid fa-key"></i> SC-300</span>
+                <span class="mini-badge"><i class="fa-solid fa-lock"></i> SC-400</span>
+                <span class="mini-badge"><i class="fa-solid fa-cloud"></i> AZ-104</span>
+                <span class="mini-badge"><i class="fa-solid fa-terminal"></i> BTL1</span>
+            </div>
+
+            <a href="#experience" class="btn-cyber" id="hero-btn">EXECUTE // VIEW_MY_WORK</a>
+        </div>
+
+        <a href="#about" class="scroll-down">
+            <span>SCROLL DOWN</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ABOUT / SUMMARY SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_01 // SEC_PROFILE</span>
+                <h2>SYS_OVERVIEW<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal-element delay-100">
+                    <div class="cyber-card">
+                        <p>
+                            Highly analytical and results-driven Security Operations (SecOps) Team Lead with over 5.4 years of experience in managing security incidents, threat hunting, and vulnerability management. Proven expertise in the Microsoft Security Stack (Azure Sentinel, Defender for Cloud, Defender for Endpoint) and SIEM engineering.
+                        </p>
+                        <p>
+                            Skilled in leading incident response teams, establishing robust SOC workflows, and implementing proactive detection rules to defend enterprise infrastructure against sophisticated cyber threats.
+                        </p>
+                        
+                        <div class="about-terminal">
+                            <div class="terminal-row">
+                                <span class="terminal-label">CURRENT_STATUS:</span>
+                                <span class="terminal-val status-active">ACTIVE // DETECTING_THREATS</span>
+                            </div>
+                            <div class="terminal-row">
+                                <span class="terminal-label">PRIMARY_FOCUS:</span>
+                                <span class="terminal-val">SOC operations and threat intelligence</span>
+                            </div>
+                            <div class="terminal-row">
+                                <span class="terminal-label">SECTOR:</span>
+                                <span class="terminal-val">Cloud Security Operations</span>
+                            </div>
+                            <div class="terminal-row">
+                                <span class="terminal-label">BASE_IP:</span>
+                                <span class="terminal-val">127.0.0.1 (Ahmedabad, India)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shield Widget -->
+                <div class="shield-container reveal-element delay-200">
+                    <svg class="svg-shield" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Rotating outer nodes ring -->
+                        <circle class="shield-ring" cx="100" cy="100" r="90"></circle>
+                        <circle class="shield-ring-reverse" cx="100" cy="100" r="80"></circle>
+                        <!-- Shield Core -->
+                        <path class="shield-bg" d="M100 25 C140 25, 170 35, 170 70 C170 120, 120 165, 100 175 C80 165, 30 120, 30 70 C30 35, 60 25, 100 25 Z"></path>
+                        <path class="shield-glow" d="M100 25 C140 25, 170 35, 170 70 C170 120, 120 165, 100 175 C80 165, 30 120, 30 70 C30 35, 60 25, 100 25 Z"></path>
+                        <!-- Center Shield Icon -->
+                        <g class="shield-icon" transform="translate(85, 75) scale(0.6)">
+                            <!-- SVG Lock Icon -->
+                            <path d="M16 2 A 8 8 0 0 0 8 10 L 8 14 L 4 14 L 4 30 L 28 30 L 28 14 L 24 14 L 24 10 A 8 8 0 0 0 16 2 Z M 16 6 A 4 4 0 0 1 20 10 L 20 14 L 12 14 L 12 10 A 4 4 0 0 1 16 6 Z" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE COMPETENCIES -->
+    <section id="competencies">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_02 // DEFENSE_STACK</span>
+                <h2>CORE_COMPETENCIES<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="competencies-grid">
+                <!-- Microsoft Security -->
+                <div class="cyber-card comp-card reveal-element">
+                    <h3 class="comp-title"><i class="fa-brands fa-microsoft"></i> MICROSOFT SECURITY</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">Azure Sentinel</span>
+                        <span class="comp-tag">Defender for Endpoint</span>
+                        <span class="comp-tag">Defender for Identity</span>
+                        <span class="comp-tag">Defender for Cloud Apps</span>
+                        <span class="comp-tag">Entra ID Security</span>
+                    </div>
+                </div>
+
+                <!-- Threat Intel -->
+                <div class="cyber-card comp-card reveal-element delay-100">
+                    <h3 class="comp-title"><i class="fa-solid fa-mask"></i> THREAT INTEL & DARK WEB</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">OSINT Investigation</span>
+                        <span class="comp-tag">Threat Actor Profiling</span>
+                        <span class="comp-tag">IOC Extraction</span>
+                        <span class="comp-tag">Dark Web Scraping</span>
+                        <span class="comp-tag">MISP Integration</span>
+                    </div>
+                </div>
+
+                <!-- Vulnerability Management -->
+                <div class="cyber-card comp-card reveal-element delay-200">
+                    <h3 class="comp-title"><i class="fa-solid fa-bug"></i> VULNERABILITY MGMT</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">Flares Tool</span>
+                        <span class="comp-tag">Dark Web Monitoring</span>
+                        <span class="comp-tag">Remediation Tracking</span>
+                        <span class="comp-tag">CVSS Triaging</span>
+                        <span class="comp-tag">Patch Verification</span>
+                    </div>
+                </div>
+
+                <!-- SIEM -->
+                <div class="cyber-card comp-card reveal-element">
+                    <h3 class="comp-title"><i class="fa-solid fa-server"></i> SIEM & LOG ANALYTICS</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">KQL (Kusto Query)</span>
+                        <span class="comp-tag">Splunk SPL</span>
+                        <span class="comp-tag">Log Parser Engine</span>
+                        <span class="comp-tag">Custom Analytics Rules</span>
+                        <span class="comp-tag">Workbook Dashboards</span>
+                    </div>
+                </div>
+
+                <!-- Incident Response -->
+                <div class="cyber-card comp-card reveal-element delay-100">
+                    <h3 class="comp-title"><i class="fa-solid fa-bolt"></i> INCIDENT RESPONSE</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">MITRE ATT&CK Mapping</span>
+                        <span class="comp-tag">Playbook Automation</span>
+                        <span class="comp-tag">Containment Strategies</span>
+                        <span class="comp-tag">Malware Sandbox Analysis</span>
+                        <span class="comp-tag">SOAR Integration</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Frameworks -->
+                <div class="cyber-card comp-card reveal-element delay-200">
+                    <h3 class="comp-title"><i class="fa-solid fa-screwdriver-wrench"></i> TOOLS & FRAMEWORKS</h3>
+                    <div class="comp-tags">
+                        <span class="comp-tag">Nmap</span>
+                        <span class="comp-tag">NIST CSF</span>
+                        <span class="comp-tag">ISO 27001 SOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_03 // ACTIVE_DEPLOYMENT</span>
+                <h2>EXPERIENCE_TIMELINE<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="timeline-wrapper">
+                <!-- Glowing central guide rail -->
+                <div class="timeline-rail"></div>
+                <div class="timeline-rail-progress" id="rail-progress"></div>
+
+                <!-- Job 1 -->
+                <div class="timeline-item reveal-element">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card-wrapper">
+                        <div class="cyber-card">
+                            <span class="timeline-date">DEC 2024 – PRESENT</span>
+                            <h3 class="timeline-role">Security Operations Team Lead</h3>
+                            <span class="timeline-company">Atech Cloud</span>
+                            <ul class="timeline-bullets">
+                                <li>Lead a high-performing team of SOC analysts, directing 24/7 security monitoring, advanced threat detection, and incident response operations.</li>
+                                <li>Design, configure, and optimize Microsoft Sentinel SIEM rules, workbooks, analytics, and SOAR automation playbooks (Logic Apps), reducing alert fatigue by 40%.</li>
+                                <li>Orchestrate response strategies for high-priority security incidents, coordinating containment, eradication, and root-cause analysis across Azure and hybrid systems.</li>
+                                <li>Standardize threat intelligence integration and establish vulnerability management programs to proactively mitigate critical security vulnerabilities.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="timeline-item reveal-element">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card-wrapper">
+                        <div class="cyber-card">
+                            <span class="timeline-date">NOV 2023 – DEC 2024</span>
+                            <h3 class="timeline-role">Security Operations Analyst (L-2)</h3>
+                            <span class="timeline-company">Atech Cloud</span>
+                            <ul class="timeline-bullets">
+                                <li>Acted as primary escalation point for complex alerts, conducting deep-dive forensics, log analysis, and malware investigation.</li>
+                                <li>Configured and maintained threat protection policies across the Microsoft Defender suite (Endpoint, Identity, Cloud Apps).</li>
+                                <li>Conducted regular threat hunting campaigns utilizing the MITRE ATT&CK framework to uncover hidden threat vectors.</li>
+                                <li>Authored Standard Operating Procedures (SOPs) and technical documentation, and mentored Level-1 SOC analysts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="timeline-item reveal-element">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card-wrapper">
+                        <div class="cyber-card">
+                            <span class="timeline-date">MAY 2022 – NOV 2023</span>
+                            <h3 class="timeline-role">Security Analyst</h3>
+                            <span class="timeline-company">Wipro</span>
+                            <ul class="timeline-bullets">
+                                <li>Monitored security event streams from Splunk SIEM and Microsoft Sentinel, identifying and triaging network anomalies, phishing, and access violations.</li>
+                                <li>Performed initial investigations, gathered threat indicators, and escalated critical alerts to Level-2 security analysts.</li>
+                                <li>Assisted in running vulnerability scans, prioritizing assets, and tracking patch mitigation with IT infrastructure teams.</li>
+                                <li>Generated daily SOC status logs and telemetry reports mapping operational security health.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="timeline-item reveal-element">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card-wrapper">
+                        <div class="cyber-card">
+                            <span class="timeline-date">DEC 2020 – MAY 2022</span>
+                            <h3 class="timeline-role">Technical Support Advisor</h3>
+                            <span class="timeline-company">Concentrix</span>
+                            <ul class="timeline-bullets">
+                                <li>Delivered technical support for enterprise network access, operating system configuration, and client-side security policies.</li>
+                                <li>Diagnosed access control problems, resolved remote networking credentials issues, and confirmed client workstation security patching compliance.</li>
+                                <li>Achieved top performance ratings by resolving complex service desk requests within strict SLA windows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS GRID -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_04 // VERIFIED_CREDENTIALS</span>
+                <h2>CERTIFICATIONS_GRID<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="certs-grid">
+                <!-- Cert 1: SC-200 -->
+                <div class="cert-card-container reveal-element">
+                    <div class="cert-card-inner">
+                        <div class="cert-card-front">
+                            <div class="cert-icon-glow"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3 class="cert-title">Security Operations Analyst</h3>
+                            <span class="cert-code">SC-200</span>
+                        </div>
+                        <div class="cert-card-back">
+                            <span class="cert-issuer">Microsoft</span>
+                            <p class="cert-desc">Authorized threat detection, Sentinel configuration, KQL querying, and incident response operations.</p>
+                            <a href="https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification" target="_blank" class="cert-btn">VERIFY</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 2: SC-300 -->
+                <div class="cert-card-container reveal-element delay-100">
+                    <div class="cert-card-inner">
+                        <div class="cert-card-front">
+                            <div class="cert-icon-glow"><i class="fa-solid fa-fingerprint"></i></div>
+                            <h3 class="cert-title">Identity & Access Admin</h3>
+                            <span class="cert-code">SC-300</span>
+                        </div>
+                        <div class="cert-card-back">
+                            <span class="cert-issuer">Microsoft</span>
+                            <p class="cert-desc">Designated identity systems, MFA governance, Entra ID setup, and conditional access security architectures.</p>
+                            <a href="https://learn.microsoft.com/en-us/credentials/certifications/identity-and-access-administrator/?practice-assessment-type=certification" target="_blank" class="cert-btn">VERIFY</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 3: SC-400 -->
+                <div class="cert-card-container reveal-element delay-200">
+                    <div class="cert-card-inner">
+                        <div class="cert-card-front">
+                            <div class="cert-icon-glow"><i class="fa-solid fa-file-shield"></i></div>
+                            <h3 class="cert-title">Information Protection</h3>
+                            <span class="cert-code">SC-400</span>
+                        </div>
+                        <div class="cert-card-back">
+                            <span class="cert-issuer">Microsoft</span>
+                            <p class="cert-desc">Data Loss Prevention policies (DLP), sensitivity labels, information protection rules, and compliance logs.</p>
+                            <a href="https://learn.microsoft.com/en-us/credentials/certifications/information-protection-and-compliance-administrator/?practice-assessment-type=certification" target="_blank" class="cert-btn">VERIFY</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 4: AZ-104 (NEW) -->
+                <div class="cert-card-container reveal-element delay-300">
+                    <div class="cert-card-inner">
+                        <!-- Ribbon for AZ-104 -->
+                        <div class="ribbon-wrapper"><div class="ribbon-new">NEW</div></div>
+                        <div class="cert-card-front">
+                            <div class="cert-icon-glow"><i class="fa-solid fa-cloud"></i></div>
+                            <h3 class="cert-title">Azure Administrator</h3>
+                            <span class="cert-code">AZ-104</span>
+                        </div>
+                        <div class="cert-card-back">
+                            <span class="cert-issuer">Microsoft</span>
+                            <p class="cert-desc">Cloud storage infrastructure, virtual networking, identity management, compute resources, and subscription administration.</p>
+                            <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?practice-assessment-type=certification" target="_blank" class="cert-btn">VERIFY</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 5: BTL1 -->
+                <div class="cert-card-container reveal-element">
+                    <div class="cert-card-inner">
+                        <div class="cert-card-front">
+                            <div class="cert-icon-glow"><i class="fa-solid fa-network-wired"></i></div>
+                            <h3 class="cert-title">Blue Team Level 1</h3>
+                            <span class="cert-code">BTL1</span>
+                        </div>
+                        <div class="cert-card-back">
+                            <span class="cert-issuer">Security Blue Team</span>
+                            <p class="cert-desc">Hands-on threat hunting, network traffic analysis, digital forensics, incident response, and tool integrations.</p>
+                            <a href="https://securityblueteam.com" target="_blank" class="cert-btn">VERIFY</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CERT ROADMAP SECTION -->
+    <section id="roadmap">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_05 // OBJECTIVE_TIMELINE</span>
+                <h2>MISSION_ROADMAP<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="cyber-card roadmap-card reveal-element">
+                <div class="roadmap-bar">
+                    <!-- Base rail background -->
+                    <div class="roadmap-track"></div>
+                    <div class="roadmap-track-fill" id="track-fill"></div>
+
+                    <!-- Step 1: AZ-104 -->
+                    <div class="roadmap-node completed">
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h4 class="roadmap-label">AZ-104</h4>
+                        <span class="roadmap-status">Completed</span>
+                    </div>
+
+                    <!-- Step 2: MS-700 -->
+                    <div class="roadmap-node in-progress">
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-gear fa-spin"></i>
+                        </div>
+                        <h4 class="roadmap-label">MS-700</h4>
+                        <span class="roadmap-status">In Progress</span>
+                    </div>
+
+                    <!-- Step 3: MD-102 -->
+                    <div class="roadmap-node locked">
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="roadmap-label">MD-102</h4>
+                        <span class="roadmap-status">Planned</span>
+                    </div>
+
+                    <!-- Step 4: SC-500 -->
+                    <div class="roadmap-node locked">
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="roadmap-label">SC-500</h4>
+                        <span class="roadmap-status">Planned</span>
+                    </div>
+
+                    <!-- Step 5: SC-100 -->
+                    <div class="roadmap-node locked">
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="roadmap-label">SC-100</h4>
+                        <span class="roadmap-status">Target</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS / OPERATIONAL COUNTER SECTION -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <!-- Stat 1 -->
+                <div class="stat-item">
+                    <div class="stat-number" id="counter-exp" data-target="5.4">0.0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="stat-item">
+                    <div class="stat-number" id="counter-teams" data-target="3">0</div>
+                    <div class="stat-label">Teams Led</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="stat-item">
+                    <div class="stat-number" id="counter-certs" data-target="5">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="stat-item">
+                    <div class="stat-number" id="counter-incidents" data-target="500">0</div>
+                    <div class="stat-label">Incidents Handled</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal-element">
+                <span class="header-code">MODULE_06 // ESTABLISH_LINK</span>
+                <h2>CONTACT_UPLINK<span>()</span></h2>
+                <div class="header-line"><div class="header-line-fill"></div></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info cards panel -->
+                <div class="contact-info-panel reveal-element">
+                    <div>
+                        <p class="contact-desc">
+                            Initiate a secure session to discuss SOC governance, engineering, security assessments, or leadership opportunities. Ping or use the secure terminal console.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <!-- Email -->
+                            <a href="mailto:manishbajaj1998@gmail.com" class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">EMAIL // SECURE_MAIL</span>
+                                    <span class="contact-value">manishbajaj1998@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/in/manish-bajajb48ab9223" target="_blank" class="contact-item">
+                                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">LINKEDIN // VERIFIED_ID</span>
+                                    <span class="contact-value">linkedin.com/in/manish-bajajb48ab9223</span>
+                                </div>
+                            </a>
+
+                            <!-- Phone -->
+                            <a href="tel:+919468076875" class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">PHONE // VOICE_COMMS</span>
+                                    <span class="contact-value">+91-9468076875</span>
+                                </div>
+                            </a>
+
+                            <!-- Location -->
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">LOCATION // BASE_COORDS</span>
+                                    <span class="contact-value">Ahmedabad, Gujarat, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Simulator -->
+                <div class="reveal-element delay-200">
+                    <div class="contact-terminal-container">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">secops-shell v1.0.4</div>
+                            <div><i class="fa-solid fa-terminal" style="font-size: 0.75rem; color: var(--color-blue)"></i></div>
+                        </div>
+                        <div class="terminal-body" id="term-body">
+                            <div><span style="color: var(--color-cyan)">[SYSTEM INITIALIZED]</span> Web console listening. Type <span style="color: var(--color-blue)">help</span> to start.</div>
+                            <div>Welcome, guest analyst. Connection secure (AES-256).</div>
+                            <br>
+                        </div>
+                        <div class="terminal-header" style="border-top: 1px solid rgba(0, 180, 216, 0.15); border-bottom: none;">
+                            <div class="terminal-input-line" style="width: 100%;">
+                                <span class="terminal-prompt">guest@manish-bajaj:~$</span>
+                                <input type="text" class="terminal-input" id="term-input" autofocus autocomplete="off" spellcheck="false" placeholder="type a command...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MANISH BAJAJ. ALL PRIVILEGES SECURED // DESIGNED FOR <span>SEC-OPS COMMANDERS</span>.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR PARTICLES, TYPEWRITER, INTERACTIVITY -->
+    <script>
+        /* ==========================================================================
+           1. CUSTOM MOUSE CURSOR WITH INTERPOLATION
+           ========================================================================== */
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let ringX = 0;
+        let ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Instantly position the center dot
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        // Loop to smoothly interpolate ring position (reduces jitter and gives high-tech lag)
+        function updateCursor() {
+            const easeFactor = 0.15; // Speed factor of outer ring
+            ringX += (mouseX - ringX) * easeFactor;
+            ringY += (mouseY - ringY) * easeFactor;
+
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top = ringY + 'px';
+
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Detect hover elements to change cursor sizes
+        const interactiveElements = document.querySelectorAll('a, button, input, .cert-card-container, .comp-tag');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering-interactive');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering-interactive');
+            });
+        });
+
+
+        /* ==========================================================================
+           2. MOBILE NAVIGATION DRAWER
+           ========================================================================== */
+        const menuBtn = document.getElementById('menu-btn');
+        const navList = document.getElementById('nav-list');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navList.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+
+
+        /* ==========================================================================
+           3. CANVAS INTERACTIVE DATA-NODE BACKGROUND
+           ========================================================================== */
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 65;
+        const maxDistance = 110;
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 2 + 1;
+                this.pulseFactor = Math.random() * 0.05;
+                this.pulseSpeed = Math.random() * 0.02 + 0.01;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+
+                // Mouse attraction
+                let dx = mouseX - this.x;
+                let dy = mouseY - this.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 180) {
+                    this.x += (dx / dist) * 0.3;
+                    this.y += (dy / dist) * 0.3;
+                }
+
+                // Breathing/pulsing dot animation
+                this.radius += Math.sin(Date.now() * this.pulseSpeed) * this.pulseFactor;
+                if (this.radius < 0.5) this.radius = 0.5;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 245, 212, 0.4)';
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Update and draw particles
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Connect neighboring particles with neon lines
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+
+                    if (dist < maxDistance) {
+                        const alpha = (1 - dist / maxDistance) * 0.12;
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 180, 216, ${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw line to cursor from closest particles
+            particles.forEach(p => {
+                const dx = mouseX - p.x;
+                const dy = mouseY - p.y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 130) {
+                    const alpha = (1 - dist / 130) * 0.15;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouseX, mouseY);
+                    ctx.strokeStyle = `rgba(0, 245, 212, ${alpha})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+
+        /* ==========================================================================
+           4. HERO TEXT TYPEWRITER & CYBER DECODING ANIMATIONS
+           ========================================================================== */
+        const typewriterTarget = document.getElementById('typewriter-target');
+        const scrambleTarget = document.getElementById('scramble-target');
+        const nameToType = "MANISH BAJAJ";
+        
+        let charIndex = 0;
+
+        function typeName() {
+            if (charIndex < nameToType.length) {
+                // If space, render spaces correctly
+                if (nameToType.charAt(charIndex) === ' ') {
+                    typewriterTarget.innerHTML += ' ';
+                } else {
+                    typewriterTarget.innerHTML += nameToType.charAt(charIndex);
+                }
+                charIndex++;
+                setTimeout(typeName, 120);
+            } else {
+                // Remove cursor blinking and trigger subtitle decrypt scrambling
+                setTimeout(startScrambleEffect, 300);
+            }
+        }
+
+        // Scramble / Decryption text decoding animation
+        function startScrambleEffect() {
+            scrambleTarget.style.opacity = '1';
+            const finalText = scrambleTarget.getAttribute('data-final');
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%&//||[]';
+            let iterations = 0;
+            
+            const interval = setInterval(() => {
+                scrambleTarget.innerText = finalText
+                    .split('')
+                    .map((char, index) => {
+                        if (index < iterations) {
+                            return finalText[index];
+                        }
+                        if (char === ' ' || char === '|' || char === '/') {
+                            return char;
+                        }
+                        return characters[Math.floor(Math.random() * characters.length)];
+                    })
+                    .join('');
+
+                if (iterations >= finalText.length) {
+                    clearInterval(interval);
+                    // Fade in certifications and action button after scramble finishes
+                    document.getElementById('hero-badges').classList.add('active');
+                    document.getElementById('hero-btn').classList.add('active');
+                }
+                iterations += 2; // Speeds up the scramble reveals
+            }, 30);
+        }
+
+        // Launch typewriter once DOM fully loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeName, 600);
+        });
+
+
+        /* ==========================================================================
+           5. INTERSECTION OBSERVER FOR VISIBILITY AND SCROLL TRIGGERS
+           ========================================================================== */
+        const revealElements = document.querySelectorAll('.reveal-element, .section-header');
+        
+        const observerOptions = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    entry.target.classList.add('visible'); // header lines
+                    
+                    // Specific trigger for timeline active entries
+                    if(entry.target.classList.contains('timeline-item')) {
+                        entry.target.classList.add('in-view');
+                    }
+
+                    // Specific trigger for stats counters
+                    if(entry.target.id === 'stats') {
+                        triggerStatsCounters();
+                    }
+
+                    // Specific trigger for roadmap fill animation
+                    if(entry.target.id === 'roadmap') {
+                        setTimeout(() => {
+                            const roadmapFill = document.getElementById('track-fill');
+                            if (window.innerWidth <= 600) {
+                                roadmapFill.style.height = '25%';
+                            } else {
+                                roadmapFill.style.width = '25%';
+                            }
+                        }, 200);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Also observe specific structures like timeline rows and stats block
+        document.querySelectorAll('.timeline-item').forEach(item => revealObserver.observe(item));
+        revealObserver.observe(document.getElementById('stats'));
+        revealObserver.observe(document.getElementById('roadmap'));
+
+        // Scroll linked timeline rail filler
+        const timeline = document.querySelector('.timeline-wrapper');
+        const railProgress = document.getElementById('rail-progress');
+        
+        window.addEventListener('scroll', () => {
+            if (!timeline || !railProgress) return;
+            const timelineRect = timeline.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Compute how far down the user has scrolled through the timeline section
+            const start = timelineRect.top - windowHeight / 2;
+            const end = timelineRect.bottom - windowHeight / 2;
+            const total = timelineRect.height;
+            
+            if (start < 0) {
+                const scrolled = Math.abs(start);
+                const percent = Math.min((scrolled / total) * 100, 100);
+                railProgress.style.bottom = (100 - percent) + '%';
+            } else {
+                railProgress.style.bottom = '100%';
+            }
+        });
+
+
+        /* ==========================================================================
+           6. TELEMETRY COUNT-UP JS ENGINE
+           ========================================================================== */
+        let statsTriggered = false;
+
+        function triggerStatsCounters() {
+            if (statsTriggered) return;
+            statsTriggered = true;
+
+            const counters = [
+                { id: 'counter-exp', target: 5.4, speed: 25, isFloat: true, suffix: '+' },
+                { id: 'counter-teams', target: 3, speed: 100, isFloat: false, suffix: '' },
+                { id: 'counter-certs', target: 5, speed: 120, isFloat: false, suffix: '+' },
+                { id: 'counter-incidents', target: 500, speed: 3, isFloat: false, suffix: '+' }
+            ];
+
+            counters.forEach(counter => {
+                const element = document.getElementById(counter.id);
+                let current = 0;
+                
+                if (counter.isFloat) {
+                    const step = counter.target / 60; // 60 frames animation
+                    const interval = setInterval(() => {
+                        current += step;
+                        if (current >= counter.target) {
+                            element.innerText = counter.target.toFixed(1) + counter.suffix;
+                            clearInterval(interval);
+                        } else {
+                            element.innerText = current.toFixed(1) + counter.suffix;
+                        }
+                    }, 20);
+                } else {
+                    const increment = Math.ceil(counter.target / 60);
+                    const interval = setInterval(() => {
+                        current += increment;
+                        if (current >= counter.target) {
+                            element.innerText = counter.target + counter.suffix;
+                            clearInterval(interval);
+                        } else {
+                            element.innerText = current + counter.suffix;
+                        }
+                    }, 20);
+                }
+            });
+        }
+
+
+        /* ==========================================================================
+           7. INTERACTIVE TERMINAL SIMULATOR Engine
+           ========================================================================== */
+        const termInput = document.getElementById('term-input');
+        const termBody = document.getElementById('term-body');
+
+        // Commands list
+        const commands = {
+            help: `Available commands:<br>
+                   - <span style="color: var(--color-cyan)">profile</span> : Read professional status summary.<br>
+                   - <span style="color: var(--color-cyan)">credentials</span> : List core security certifications.<br>
+                   - <span style="color: var(--color-cyan)">ping</span> : Ping host device controller.<br>
+                   - <span style="color: var(--color-cyan)">secops_status</span> : Query SOC threat levels and automation metrics.<br>
+                   - <span style="color: var(--color-cyan)">contact</span> : Pull communication details.<br>
+                   - <span style="color: var(--color-cyan)">clear</span> : Wipe shell screen buffer.`,
+            profile: `MANISH BAJAJ // Security Operations Team Lead<br>
+                      -----------------------------------------------<br>
+                      * 5.4+ years monitoring cloud infrastructure & SOC environments.<br>
+                      * Primary Lead of Atech Cloud Security Operations Center.<br>
+                      * Expert level architect for Azure Sentinel, KQL querying & SOC runbooks.<br>
+                      * Threat intelligence integrations & proactive risk modeling.`,
+            credentials: `VERIFIED DIGITAL CREDENTIALS:<br>
+                          -------------------------------<br>
+                          - SC-200 : Microsoft Security Operations Analyst<br>
+                          - SC-300 : Microsoft Identity & Access Administrator<br>
+                          - SC-400 : Microsoft Information Protection Admin<br>
+                          - AZ-104 : Microsoft Azure Administrator [NEW]<br>
+                          - BTL1   : Blue Team Level 1 Certified`,
+            ping: `PING manish-bajaj (127.0.0.1): 56 data bytes<br>
+                   64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.038 ms<br>
+                   64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.042 ms<br>
+                   64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.035 ms<br>
+                   --- manish-bajaj ping statistics ---<br>
+                   3 packets transmitted, 3 received, 0% packet loss, rtt avg = 0.038 ms`,
+            secops_status: `<span style="color: var(--color-green)">[STATUS: ACTIVE]</span> SOC systems normal.<br>
+                            - Threat Level: LOW // Continuously Monitoring.<br>
+                            - Sentinel Connectors: 24 active pipelines.<br>
+                            - Daily Logs Triaged: ~4,200,000 events.<br>
+                            - Alert-to-Incident Ratio: 12% optimization through SOAR (Logic Apps).`,
+            contact: `COMMUNICATION PORTS OPEN:<br>
+                      ---------------------------<br>
+                      * Secure Mail : <a href="mailto:manishbajaj1998@gmail.com" style="color: var(--color-cyan)">manishbajaj1998@gmail.com</a><br>
+                      * LinkedIn : <a href="https://linkedin.com/in/manish-bajajb48ab9223" target="_blank" style="color: var(--color-cyan)">linkedin.com/in/manish-bajajb48ab9223</a><br>
+                      * Audio Uplink : +91-9468076875<br>
+                      * Base Coords : Ahmedabad, Gujarat, India`,
+            clear: ""
+        };
+
+        termInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const rawVal = termInput.value.trim();
+                const command = rawVal.toLowerCase();
+                termInput.value = '';
+
+                // Render entered command line
+                const inputLine = document.createElement('div');
+                inputLine.innerHTML = `<span style="color: var(--color-blue)">guest@manish-bajaj:~$</span> ${rawVal}`;
+                termBody.appendChild(inputLine);
+
+                // Process response
+                if (command === '') {
+                    // Do nothing
+                } else if (command === 'clear') {
+                    termBody.innerHTML = '';
+                } else if (commands[command]) {
+                    const responseLine = document.createElement('div');
+                    responseLine.innerHTML = commands[command];
+                    termBody.appendChild(responseLine);
+                } else {
+                    const errorLine = document.createElement('div');
+                    errorLine.innerHTML = `<span style="color: var(--color-red)">[SHELL ERROR]</span>: Command '${rawVal}' not found. Type <span style="color: var(--color-blue)">help</span> to retrieve commands list.`;
+                    termBody.appendChild(errorLine);
+                }
+
+                // Autoscroll terminal
+                setTimeout(() => {
+                    termBody.scrollTop = termBody.scrollHeight;
+                }, 20);
+            }
+        });
+
+        // Refocus input if user clicks inside terminal
+        document.querySelector('.contact-terminal-container').addEventListener('click', () => {
+            termInput.focus();
+        });
+
+
+        /* ==========================================================================
+           8. ACTIVE NAV LINK HIGHLIGHTING
+           ========================================================================== */
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let currentSec = "";
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop;
+                const secHeight = sec.clientHeight;
+                if (window.scrollY >= (secTop - 150)) {
+                    currentSec = sec.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').slice(1) === currentSec) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
